@@ -1,0 +1,110 @@
+body{
+  background: #D9D9D9;
+  color: #333333;
+}
+ul{
+  list-style: none;
+}
+input{
+  padding: 5px 10px;
+  border: none;
+  box-sizing: border-box;
+  background: none;
+}
+
+/*////////////////////
+ ヘッダー
+////////////////////*/
+.header{
+  height: 60px;
+  background: #304848;
+  color: #f3f3f3;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.header.header--effect{
+  background: rgba(255, 255, 255, 0.5);
+}
+.header-wrapper{
+  padding-left: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+.header_title{
+  width: 260px;
+  padding-top: 15px;
+  font-size: 36px;
+  font-weight: bold;
+  float: left;
+  opacity: none;
+}
+.header_form{
+  width: 500px;
+  height: 45px;
+  padding: 0 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: auto ;
+  display: flex;
+  align-items: center;
+}
+.header_input{
+  width: 45%;
+  height: 90%;
+  font-size: 16px;
+}
+.header_input:last-child{
+  border-left: 1px solid #333;
+}
+.header_menu{
+  float: right;
+  display: flex;
+  opacity: none;
+}
+.header_menuItem{
+  padding-right: 20px;
+  text-align: center;
+}
+.header_menuItem:hover{
+  opacity: 0.4;
+}
+.header_menuItem:last-child{
+  padding-right: 0;
+}
+.header_menuItem_link{
+  padding: calc(30px - 8px) 0;
+}
+.header_menuItem_link--strong{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/*////////////////////
+ フッター
+////////////////////*/
+.footer{
+  height: 200px;
+  background: #2F393A;
+  color: #f3f3f3;
+}
+.footer_copyright{
+  text-align: center;
+  padding-top: 150px;
+  display: block;
+}
+
+/*////////////////////
+ 共通アイテム
+////////////////////*/
+.strongPoint{
+  background: #DE6710;
+  color: #F3F3F3;
+}
+.link{
+  display: block;
+}
+.link:hover{
+  cursor: pointer;
+}
