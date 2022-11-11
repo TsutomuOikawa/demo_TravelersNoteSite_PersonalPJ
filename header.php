@@ -7,10 +7,18 @@
         <input type="text" name="" class="header_input" value="" placeholder="キーワードを入力">
         <button type="submit" class="header_submit" name=""><i class="fas fa-search fa-lg"></i></button>
       </form>
-      <ul class="header_menu">
-        <li class="header_menuItem"><a href="index.php#about" class="header_menuItem_link">About</a></li>
-        <li class="header_menuItem"><a href="signIn.php" class="header_menuItem_link">Sign in</a></li>
-        <li class="header_menuItem"><a href="register.php" class="header_menuItem_link">Register</a></li>
-      </ul>
+      <div class="header_humburger js-menu-trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="header_menu">
+        <ul class="menu">
+          <li class="menu_item"><a href="index.php#about" class="menu_item_link">About</a></li>
+          <li class="menu_item--sp"><a href="index.php#about" class="menu_item_link">Search Destination</a></li>
+          <li class="menu_item"><a href="login.php" class="menu_item_link">Login</a></li>
+          <li class="menu_item"><a href="register.php" class="menu_item_link">Register</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
