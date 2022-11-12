@@ -24,16 +24,19 @@ require ('header.php');
           </div>
         </div>
       </section>
-      <ul class="imgSlider">
-        <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
-        <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
-        <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
-        <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
-        <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
-        <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
-        <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
-        <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
-      </ul>
+      <div class="imgSlider">
+        <ul class="imgSlider_list">
+          <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
+          <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
+          <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
+          <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
+          <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
+          <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
+          <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
+          <li class="imgSlider_item"><img src="img/noimage.png" class="imgSlider_img" alt=""></li>
+        </ul>
+
+      </div>
       <section id="about" class="container--subColor">
         <h2 class="container_title">Globe Noteとは</h2>
         <div class="container_body">
