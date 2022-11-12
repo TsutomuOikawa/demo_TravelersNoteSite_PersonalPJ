@@ -11,7 +11,8 @@ require('header.php');
 <main class="page-wrapper">
   <div class="container--baseColor">
     <h1 class="container_title">パスワード再発行手続き</h1>
-    <p>メールアドレスに届いた認証コードを入力してください<br>パスワードを再発行し、再度メールをお送りします</p>
+    <p class="container_notion">メールアドレスに届いた認証コードを<br>入力してください</p>
+    <p class="container_notion">パスワードを再発行し、<br>再度メールをお送りします</p>
     <div class="container_body--xs">
       <form method="post" class="form">
       <h2 class="form_title">認証コードを入力してください</h2>
