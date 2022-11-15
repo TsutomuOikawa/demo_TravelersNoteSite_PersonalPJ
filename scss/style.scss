@@ -62,7 +62,7 @@ $breakpoint: (
   box-sizing: border-box;
   margin: 0 auto;
   @include mqSP() {
-    padding: $space-m $space-s;
+    padding: $space-l $space-s;
   }
 }
 %subTitle {
