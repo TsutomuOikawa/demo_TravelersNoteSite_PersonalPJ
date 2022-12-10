@@ -338,9 +338,12 @@ ul {
     padding: 0 $space-xs;
     box-sizing: border-box;
     margin: $space-xl auto 0;
-    &--l {
+    &--xs {
       @extend .container_body;
-      max-width: 1220px;
+      max-width: 35%;
+      @include mqSP() {
+        max-width: 100%;
+      }
     }
     &--s {
       @extend .container_body;
@@ -349,12 +352,9 @@ ul {
         width: 100%;
       }
     }
-    &--xs {
+    &--l {
       @extend .container_body;
-      max-width: 35%;
-      @include mqSP() {
-        max-width: 100%;
-      }
+      max-width: 1220px;
     }
   }
 }
@@ -559,7 +559,9 @@ ul {
     }
     &--destination {
       @extend .list_body;
-
+        align-items: flex-start;
+        justify-content: space-around;
+      margin-right: -10px;
     }
   }
 }
@@ -643,9 +645,10 @@ ul {
     border-radius: 4px;
     cursor: pointer;
     display: inline-flex;
-    height: 180px;
+    height: 90px;
+    margin: 0 $space-xs $space-xs 0;
     position: relative;
-    width: 240px;
+    width: 12%;
   }
   &_destImg {
     border-radius: 4px;
@@ -663,7 +666,7 @@ ul {
   }
   &_destName {
     color: $color-white;
-    font-size: $fontSize-xl;
+    font-size: $fontSize-l;
     position: absolute;
       top: 50%;
       left: 50%;
