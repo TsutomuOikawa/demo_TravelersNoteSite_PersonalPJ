@@ -77,6 +77,7 @@ $breakpoint: (
   padding-bottom: $space-m;
   @include mqSP () {
     font-size: $fontSize-l;
+    padding-bottom: $space-s;
   };
 }
 
@@ -113,7 +114,7 @@ ul {
 /*====================
  ヘッダー
 ====================*/
-.header{
+.header {
   height: 70px;
   box-shadow: 0 1px 3px $siteColor-base;
   background: $siteColor-sub;
@@ -133,19 +134,11 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include mqSP() {
-      padding: $space-xxs;
-      box-sizing: border-box;
-      position: relative;
-    };
   }
   &_logo {
     padding-right: 78px;
     font-size: $fontSize-xxxl;
     font-weight: bold;
-    @include mqSP() {
-      padding-right: 0;
-    }
   }
   &_form {
     width: 500px;
@@ -161,9 +154,6 @@ ul {
     &.nonactive {
       opacity: 0;
     }
-    @include mqSP() {
-      display: none;
-    };
   }
   &_input{
     width: 47%;
@@ -196,9 +186,6 @@ ul {
     position: relative;
     cursor: pointer;
     transition: all .4s;
-    @include mqSP() {
-      display: inline-block;
-    }
     & span {
       width: 100%;
       position: absolute;
@@ -217,7 +204,29 @@ ul {
     }
   }
   &_menu {
-    @include mqSP() {
+    &.active {
+      right: 0;
+    }
+  }
+}
+
+@include mqSP() {
+  .header {
+    &-wrapper {
+      padding: $space-xxs;
+      box-sizing: border-box;
+      position: relative;
+    }
+    &_logo {
+      padding-right: 0;
+    }
+    &_form {
+      display: none;
+    }
+    &_humburger {
+      display: inline-block;
+    }
+    &_menu {
       width: 100%;
       padding: 70px $space_l $space-s;
       box-sizing: border-box;
@@ -227,24 +236,15 @@ ul {
       right: -100%;
       transition: 1.5s;
     }
-    &.active {
-      right: 0;
-    }
   }
 }
 
 // メニュー
 .menu {
   display: flex;
-  @include mqSP() {
-    flex-direction: column;
-  }
   &_item {
     width: 100px;
     text-align: center;
-    @include mqSP() {
-      width: 100%;
-    }
     &:hover {
       background: rgba($color-black, 0.5);
     }
@@ -269,6 +269,18 @@ ul {
   }
 }
 
+@include mqSP() {
+  .menu {
+    flex-direction: column;
+    &_item {
+      width: 100%;
+      &--sp {
+        display: block;
+      }
+    }
+  }
+}
+
 /*====================
  フッター
 ====================*/
@@ -282,12 +294,20 @@ ul {
     display: block;
     br {
       display: none;
-      @include mqSP() {
+    }
+  }
+}
+
+@include mqSP() {
+  .footer {
+    &_copyright {
+      br {
         display: inline;
       }
     }
   }
 }
+
 /*====================
  共通コンテナ
 ====================*/
@@ -313,9 +333,6 @@ ul {
     background-position: left;
     background-repeat: repeat;
     background-size: 100% 60%;
-    @include mqSP() {
-      background-size: 100% 15%;
-    };
   }
   &_title {
     font-size: $fontSize-xxl;
@@ -332,16 +349,10 @@ ul {
       right: 0;
       left: 0;
     }
-    @include mqSP() {
-      font-size: $fontSize-xl;
-    };
   }
   &_notion {
     br {
       display: none;
-      @include mqSP() {
-        display: inline;
-      }
     }
   }
   &_body {
@@ -352,20 +363,38 @@ ul {
     &--xs {
       @extend .container_body;
       max-width: 35%;
-      @include mqSP() {
-        max-width: 100%;
-      }
     }
     &--s {
       @extend .container_body;
       width: 70%;
-      @include mqSP() {
-        width: 100%;
-      }
     }
     &--l {
       @extend .container_body;
       max-width: 1220px;
+    }
+  }
+}
+
+@include mqSP() {
+  .container {
+    &--note {
+      background-size: 100% 15%;
+    }
+    &_title {
+      font-size: $fontSize-xl;
+    }
+    &_notion {
+      br {
+        display: inline;
+      }
+    }
+    &_body {
+      &--xs {
+        max-width: 100%;
+      }
+      &--s {
+        width: 100%;
+      }
     }
   }
 }
@@ -392,16 +421,8 @@ ul {
     padding-bottom: $space-m;
     color: $color-white;
     font-size:$fontSize-xxxl;
-    span {
-      @include mqSP() {
-        display: none;
-      }
-    }
     br {
       display: none;
-      @include mqSP() {
-        display: inline;
-      }
     }
   }
 }
@@ -410,9 +431,6 @@ ul {
   position: relative;
   &>.container_title::before {
     content: 'Where will you visit next ?';
-  }
-  @include mqSP() {
-    display: none;
   }
 }
 .imgSlider {
@@ -438,6 +456,22 @@ ul {
 #search > .container_title::before {
   content: 'Search';
 }
+
+@include mqSP() {
+  .firstView {
+    &_title {
+      span {
+        display: none;
+      }
+      br {
+        display: inline;
+      }
+    }
+  }
+  .map {
+    display: none;
+  }
+}
 /*====================
  index.php > feature
 ====================*/
@@ -445,10 +479,6 @@ ul {
   @extend %contents-wrapper;
   padding: $space-xl $space-xxl;
   box-shadow: 0 0 20px rgba(0, 0, 0, .2);
-  @include mqSP() {
-    padding: 0;
-    box-shadow: none;
-  }
 }
 .feature {
   display: flex;
@@ -456,41 +486,45 @@ ul {
   align-items: center;
   flex-wrap: wrap;
   padding-bottom: $space-xxl;
-  @include mqSP() {
-    flex-direction:column;
-  }
   &:last-child {
     padding-bottom: 0;
   }
   &--reverse {
     flex-direction: row-reverse;
-    @include mqSP() {
-      flex-direction: column;
-    }
   }
   &_img {
     @extend %imgSize-l;
-    @include mqSP() {
-      width: 270px;
-      height: 180px;
-      padding-bottom: $space-xs;
-    }
   }
   &_description {
     width: 35%;
     box-sizing: border-box;
-    @include mqSP() {
-      width: 100%;
-    }
   }
   &_title {
     @extend %subTitle;
   }
 }
 
-/*====================
- prefectures.php
-====================*/
+@include mqSP() {
+  .features-wrapper {
+    padding: 0;
+    box-shadow: none;
+  }
+  .feature {
+    flex-direction:column;
+    &--reverse {
+      flex-direction: column;
+    }
+    &_img {
+      width: 270px;
+      height: 180px;
+      padding-bottom: $space-xs;
+    }
+    &_description {
+      width: 100%;
+    }
+  }
+}
+
 /*====================
  prefectures.php > information
 ====================*/
@@ -500,33 +534,39 @@ ul {
       justify-content: space-around;
       align-items: center;
     margin-top: $space-l;
-    @include mqSP() {
-      flex-direction: column;
-    }
   }
   &_now {
     height:400px;
     margin: $space-s 0;
     width:400px;
-    @include mqSP() {
-      height: 200px;
-      width: 300px;
-    }
   }
   &_map {
     height:400px;
     margin: $space-s 0;
     width:400px;
-    @include mqSP() {
+  }
+}
+
+@include mqSP() {
+  .information {
+    &_orderItems {
+      flex-direction: column;
+    }
+    &_now {
+      height: 200px;
+      width: 300px;
+    }
+    &_map {
       height: 200px;
       width: 300px;
     }
   }
 }
 
-
-
-#changeDestination {
+/*====================
+ prefectures.php > changeDestination
+====================*/
+.changeDestination {
   position: relative;
   z-index: 3;
   &::after {
@@ -546,8 +586,6 @@ ul {
   }
 }
 
-
-
 /*====================
  list
 ====================*/
@@ -556,11 +594,6 @@ ul {
   box-shadow: none;
   box-sizing: border-box;
   padding-top: $space-m;
-
-  @include mqSP() {
-    flex-direction: column;
-    padding: 0 0 $space-l;
-  }
   &--note {
     @extend .list;
   }
@@ -595,10 +628,6 @@ ul {
     }
     &--note {
       @extend .list_body;
-      @include mqSP() {
-        flex-wrap: nowrap;
-      overflow-x: scroll;
-      }
     }
     &--destination {
       @extend .list_body;
@@ -611,6 +640,19 @@ ul {
   }
 }
 
+@include mqSP() {
+  .list {
+    flex-direction: column;
+    padding: 0 0 $space-l;
+    &_body {
+      &--note {
+          flex-wrap: nowrap;
+        overflow-x: scroll;
+      }
+    }
+  }
+}
+
 /*====================
  panel
 ====================*/
@@ -618,19 +660,12 @@ ul {
   border-radius: 4px;
   color: $fontColor-default;
   position: relative;
-  @include mqSP() {
-    padding: 0 0 $space-l;
-  }
   &--note {
     @extend .panel;
     background: rgba(252, 250, 242, .8);
     height: 330px;
     margin-right: $space-s;
     width: 220px;
-    @include mqSP() {
-      height: 270px;
-      min-width: 180px;
-    };
   }
   &_thumbnail {
     border-radius: 4px 4px 0 0;
@@ -650,9 +685,6 @@ ul {
     font-size: $fontSize-m;
     padding-bottom: $space-xxs;
     text-align: left;
-    @include mqSP() {
-      font-size: $fontSize-s;
-    };
   }
   &_postDay{
     color: $fontColor-sub;
@@ -680,13 +712,6 @@ ul {
       position: absolute;
       right: 15px;
     }
-    @include mqSP() {
-      align-items: flex-start;
-      flex-direction: column;
-      &::after {
-        top: 8px;
-      }
-    }
   }
   &_table {
     margin-right: 25px;
@@ -695,9 +720,6 @@ ul {
       display: flex;
         align-items: center;
     }
-    @include mqSP() {
-      width: 100%;
-    };
   }
   &_tableElm {
     &:first-child {
@@ -711,17 +733,6 @@ ul {
     td {
       font-size: $fontSize-m;
     }
-    @include mqSP() {
-      display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-      &:first-child {
-        width: 25%;
-      }
-      td {
-        font-size: $fontSize-s;
-      }
-    }
   }
   &--destination {
     @extend .panel;
@@ -731,10 +742,6 @@ ul {
     height: 150px;
     margin: 0 $space-xs $space-xs 0;
     min-width: 20%;
-    @include mqSP() {
-      height: auto;
-      min-width: 35%;
-    };
   }
   &_destImg {
     border-radius: 4px;
@@ -757,9 +764,47 @@ ul {
       top: 50%;
       left: 50%;
     transform: translate(-50%, -40%);
-    @include mqSP() {
+  }
+}
+
+@include mqSP() {
+  .panel {
+    padding: 0 0 $space-l;
+    &--note {
+      height: 270px;
+      min-width: 180px;
+    }
+    &_title {
       font-size: $fontSize-s;
-    };
+    }
+    &--wish {
+      align-items: flex-start;
+      flex-direction: column;
+      &::after {
+        top: 8px;
+      }
+    }
+    &_table {
+      width: 100%;
+    }
+    &_tableElm {
+      display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+      &:first-child {
+        width: 25%;
+      }
+      td {
+        font-size: $fontSize-s;
+      }
+    }
+    &--destination {
+      height: auto;
+      min-width: 35%;
+    }
+    &_destName {
+      font-size: $fontSize-s;
+    }
   }
 }
 
@@ -840,10 +885,9 @@ ul {
 
 
 /*====================
- note
+ note関連
 ====================*/
 .note {
-
 }
 .userInfo {
   display: flex;
@@ -855,21 +899,19 @@ ul {
     width: 35px;
   }
   &_name {
-
   }
-  @include mqSP() {
-    margin-bottom: $space-xxs;
-  };
+}
 
+@include mqSP() {
+  .userInfo {
+    margin-bottom: $space-xxs;
+  }
 }
 
 .iconBox {
   display: flex;
   align-items: center;
-
 }
-
-
 
 /*====================
   ピンポイントアイテム
