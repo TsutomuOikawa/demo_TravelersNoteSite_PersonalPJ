@@ -32,7 +32,6 @@ require ('header.php');
                     <td>雪の熊本城を撮りたい！</td>
                   </tr>
                 </table>
-                <i></i>
               </li>
 
               <li class="panel--wish">
@@ -139,20 +138,19 @@ require ('header.php');
               </li>
             </ul>
           </div>
-          <div class="mapAndSns">
-            <div class="mapAndSns_googlemap" style="height:400px; width:400px;">
-              <h3>熊本県のマップ</h3>
-              <div class="" style="height:350px; width:350px; background:white;">
-
-              </div>
-            </div>
-            <div class="mapAndSns_twitter" style="height:400px; width:400px;">
+          <div class="information_orderItems">
+            <div class="information_now">
               <h3>熊本県の工事情報</h3>
-              <div class="" style="height:350px; width:350px; background:white;">
+              <div class="" style="height:100px; width:100%; background:white;">
 
               </div>
             </div>
+            <div class="information_map">
+              <h3>熊本県のマップ</h3>
+              <div class="" style="height:100px; width:100%; background:white;">
 
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -170,11 +168,11 @@ require ('header.php');
 
       </div>
       <section id="note" class="container--note">
-        <h2 class="container_title">熊本県を訪れた人のノート</h2>
+        <h2 class="container_title">熊本県の最新ノート</h2>
         <div class="container_body--l">
           <div class="list--note">
-            <ul class="list_body">
-              <li class="panel panel--note">
+            <ul class="list_body--note">
+              <li class="panel--note">
                 <img src="img/IMG_5131.JPG" class="panel_thumbnail" alt="">
                 <div class="panel_info">
                   <h3 class="panel_title">朝5時に家を出てから、18時間での熊本訪問</h3>
@@ -192,7 +190,7 @@ require ('header.php');
                 </div>
               </li>
 
-              <li class="panel panel--note">
+              <li class="panel--note">
                 <img src="img/6241759280_IMG_3459.JPG" class="panel_thumbnail" alt="">
                 <div class="panel_info">
                   <h3 class="panel_title">熊本の、城とラーメンと人情と</h3>
@@ -210,7 +208,7 @@ require ('header.php');
                 </div>
               </li>
 
-              <li class="panel panel--note">
+              <li class="panel--note">
                 <img src="img/6176658528_IMG_4498.JPG" class="panel_thumbnail" alt="">
                 <div class="panel_info">
                   <h3 class="panel_title">いつか行ってみたいと思っていた熊本に行ってきました！</h3>
@@ -228,7 +226,7 @@ require ('header.php');
                 </div>
               </li>
 
-              <li class="panel panel--note">
+              <li class="panel--note">
                 <img src="img/IMG_5506.JPG" class="panel_thumbnail" alt="">
                 <div class="panel_info">
                   <h3 class="panel_title">タイトル</h3>
@@ -254,56 +252,74 @@ require ('header.php');
         <h2 class="container_title">行き先を変える</h2>
         <div class="container_body--l">
           <div class="list--destination">
-            <!-- <h3 class="list_title">関東</h3> -->
+
+            <h3 class="list_title--destination">北海道・東北</h3>
+            <div class="list_body--destination">
+              <a class="panel--destination">
+                <img src="img/IMG_3930.JPG" class="panel_destImg" alt="">
+                <span class="panel_destCover"></span>
+                <span class="panel_destName">北海道</span>
+              </a>
+              <a class="panel--destination">
+                <img src="img/IMG_3930.JPG" class="panel_destImg" alt="">
+                <span class="panel_destCover"></span>
+                <span class="panel_destName">青森</span>
+              </a>
+              <a class="panel--destination">
+                <img src="img/IMG_3930.JPG" class="panel_destImg" alt="">
+                <span class="panel_destCover"></span>
+                <span class="panel_destName">岩手</span>
+              </a>
+              <a class="panel--destination">
+                <img src="img/IMG_3930.JPG" class="panel_destImg" alt="">
+                <span class="panel_destCover"></span>
+                <span class="panel_destName">宮城</span>
+              </a>
+              <a class="panel--destination">
+                <img src="img/IMG_3930.JPG" class="panel_destImg" alt="">
+                <span class="panel_destCover"></span>
+                <span class="panel_destName">秋田</span>
+              </a>
+
+              <a class="panel--destination">
+                <img src="img/IMG_3930.JPG" class="panel_destImg" alt="">
+                <span class="panel_destCover"></span>
+                <span class="panel_destName">山形</span>
+              </a>
+
+              <a class="panel--destination">
+                <img src="img/IMG_3930.JPG" class="panel_destImg" alt="">
+                <span class="panel_destCover"></span>
+                <span class="panel_destName">福島</span>
+              </a>
+            </div>
+
+            <h3 class="list_title--destination">南関東</h3>
             <div class="list_body--destination">
               <a class="panel--destination">
                 <img src="img/IMG_3930.JPG" class="panel_destImg" alt="">
                 <span class="panel_destCover"></span>
                 <span class="panel_destName">東京</span>
               </a>
-
-              <a class="panel--destination">
-                <img src="img/IMG_3930.JPG" class="panel_destImg" alt="">
-                <span class="panel_destCover"></span>
-                <span class="panel_destName">千葉</span>
-              </a>
-
               <a class="panel--destination">
                 <img src="img/IMG_3930.JPG" class="panel_destImg" alt="">
                 <span class="panel_destCover"></span>
                 <span class="panel_destName">神奈川</span>
               </a>
-
               <a class="panel--destination">
                 <img src="img/IMG_3930.JPG" class="panel_destImg" alt="">
                 <span class="panel_destCover"></span>
                 <span class="panel_destName">埼玉</span>
               </a>
-
               <a class="panel--destination">
                 <img src="img/IMG_3930.JPG" class="panel_destImg" alt="">
                 <span class="panel_destCover"></span>
-                <span class="panel_destName">静岡</span>
-              </a>
-
-              <a class="panel--destination">
-                <img src="img/IMG_3930.JPG" class="panel_destImg" alt="">
-                <span class="panel_destCover"></span>
-                <span class="panel_destName">愛知</span>
-              </a>
-
-              <a class="panel--destination">
-                <img src="img/IMG_3930.JPG" class="panel_destImg" alt="">
-                <span class="panel_destCover"></span>
-                <span class="panel_destName">京都</span>
-              </a>
-
-              <a class="panel--destination">
-                <img src="img/IMG_3930.JPG" class="panel_destImg" alt="">
-                <span class="panel_destCover"></span>
-                <span class="panel_destName">大阪</span>
+                <span class="panel_destName">千葉</span>
               </a>
             </div>
+
+
+
           </div>
         </div>
       </section>

@@ -10,11 +10,13 @@ $siteColor-accent-hover: #ff9f58;
 $siteColor-err: #ff6565;
 
 $fontSize-ss: 13px;
+$fontSize-s: 15px;
 $fontSize-default: 16px;
 $fontSize-m: 18px;
 $fontSize-l: 20px;
-$fontSize-xl: 30px; //container_title
-$fontSize-xxl: 36px;
+$fontSize-xl: 24px;
+$fontSize-xxl: 30px; //container_title
+$fontSize-xxxl: 36px;
 
 $fontColor-default: #333333;
 $fontColor-sub: #898989;
@@ -70,9 +72,12 @@ $breakpoint: (
 }
 %subTitle {
   font-weight: bold;
-  font-size: $fontSize-l;
+  font-size: $fontSize-xl;
   text-align: center;
   padding-bottom: $space-m;
+  @include mqSP () {
+    font-size: $fontSize-l;
+  };
 }
 
 /*====================
@@ -136,7 +141,7 @@ ul {
   }
   &_logo {
     padding-right: 78px;
-    font-size: $fontSize-xxl;
+    font-size: $fontSize-xxxl;
     font-weight: bold;
     @include mqSP() {
       padding-right: 0;
@@ -305,12 +310,15 @@ ul {
   &--note {
     @extend .container;
     background-image: url('../img/woody-background.JPG');
-    background-position: center;
-    background-repeat: repeat-y;
-    background-size: 100% 70%;
+    background-position: left;
+    background-repeat: repeat;
+    background-size: 100% 60%;
+    @include mqSP() {
+      background-size: 100% 15%;
+    };
   }
   &_title {
-    font-size: $fontSize-xl;
+    font-size: $fontSize-xxl;
     font-weight: bold;
     text-align: center;
     position: relative;
@@ -324,6 +332,9 @@ ul {
       right: 0;
       left: 0;
     }
+    @include mqSP() {
+      font-size: $fontSize-xl;
+    };
   }
   &_notion {
     br {
@@ -380,7 +391,7 @@ ul {
   &_title {
     padding-bottom: $space-m;
     color: $color-white;
-    font-size:$fontSize-xxl;
+    font-size:$fontSize-xxxl;
     span {
       @include mqSP() {
         display: none;
@@ -483,18 +494,36 @@ ul {
 /*====================
  prefectures.php > information
 ====================*/
-.mapAndSns {
-  display: flex;
-  justify-content: space-around;
-  margin-top: $space-l;
-  &_googlemap {
-
+.information {
+  &_orderItems {
+    display: flex;
+      justify-content: space-around;
+      align-items: center;
+    margin-top: $space-l;
+    @include mqSP() {
+      flex-direction: column;
+    }
   }
-
-  &_twitter {
-
+  &_now {
+    height:400px;
+    margin: $space-s 0;
+    width:400px;
+    @include mqSP() {
+      height: 200px;
+      width: 300px;
+    }
+  }
+  &_map {
+    height:400px;
+    margin: $space-s 0;
+    width:400px;
+    @include mqSP() {
+      height: 200px;
+      width: 300px;
+    }
   }
 }
+
 
 
 #changeDestination {
@@ -507,9 +536,9 @@ ul {
     background-image: url('../img/IMG_5228.JPG');
     background-position: center;
     background-size: cover;
-    height: 75%;
+    height: 60%;
     position: absolute;
-      top: 25%;
+      top: 40%;
       right: 0;
       bottom: 0;
       left: 0;
@@ -541,10 +570,17 @@ ul {
   }
   &--destination {
     @extend .list;
+    .list_title {
+      text-align: left;
+    }
   }
   &_title {
     @extend %subTitle;
-    padding-bottom: $space-s;
+    &--destination {
+      @extend .list_title;
+      text-shadow: 0 0 5px $siteColor;
+      text-align: center;
+    }
   }
   &_body {
     display: flex;
@@ -557,11 +593,20 @@ ul {
       padding: $space-s;
       width: 100%;
     }
+    &--note {
+      @extend .list_body;
+      @include mqSP() {
+        flex-wrap: nowrap;
+      overflow-x: scroll;
+      }
+    }
     &--destination {
       @extend .list_body;
-        align-items: flex-start;
-        justify-content: space-around;
-      margin-right: -10px;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      margin: 0 -10px $space-l 0;
+      overflow-x: scroll;
     }
   }
 }
@@ -572,6 +617,7 @@ ul {
 .panel {
   border-radius: 4px;
   color: $fontColor-default;
+  position: relative;
   @include mqSP() {
     padding: 0 0 $space-l;
   }
@@ -581,12 +627,15 @@ ul {
     height: 330px;
     margin-right: $space-s;
     width: 220px;
+    @include mqSP() {
+      height: 270px;
+      min-width: 180px;
+    };
   }
   &_thumbnail {
     border-radius: 4px 4px 0 0;
     box-sizing: border-box;
     height: 45%;
-    width: 100%;
   }
   &_info {
     box-sizing: border-box;
@@ -601,6 +650,9 @@ ul {
     font-size: $fontSize-m;
     padding-bottom: $space-xxs;
     text-align: left;
+    @include mqSP() {
+      font-size: $fontSize-s;
+    };
   }
   &_postDay{
     color: $fontColor-sub;
@@ -619,17 +671,37 @@ ul {
     &:last-child {
       margin-bottom: 0;
     }
+    &::after {
+      content: '\f004';
+      color: $fontColor-sub;
+      font-family: "Font Awesome 6 Free";
+      font-size: $fontSize-xl;
+      font-weight: 900;
+      position: absolute;
+      right: 15px;
+    }
+    @include mqSP() {
+      align-items: flex-start;
+      flex-direction: column;
+      &::after {
+        top: 8px;
+      }
+    }
   }
   &_table {
+    margin-right: 25px;
     width: 70%;
     tbody {
       display: flex;
         align-items: center;
     }
+    @include mqSP() {
+      width: 100%;
+    };
   }
   &_tableElm {
     &:first-child {
-      width: 35%;
+      width: 30%;
     }
     th {
       color: $fontColor-sub;
@@ -639,16 +711,30 @@ ul {
     td {
       font-size: $fontSize-m;
     }
+    @include mqSP() {
+      display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+      &:first-child {
+        width: 25%;
+      }
+      td {
+        font-size: $fontSize-s;
+      }
+    }
   }
   &--destination {
     @extend .panel;
     border-radius: 4px;
     cursor: pointer;
     display: inline-flex;
-    height: 90px;
+    height: 150px;
     margin: 0 $space-xs $space-xs 0;
-    position: relative;
-    width: 12%;
+    min-width: 20%;
+    @include mqSP() {
+      height: auto;
+      min-width: 35%;
+    };
   }
   &_destImg {
     border-radius: 4px;
@@ -666,11 +752,14 @@ ul {
   }
   &_destName {
     color: $color-white;
-    font-size: $fontSize-l;
+    font-size: $fontSize-xl;
     position: absolute;
       top: 50%;
       left: 50%;
     transform: translate(-50%, -40%);
+    @include mqSP() {
+      font-size: $fontSize-s;
+    };
   }
 }
 
@@ -755,9 +844,6 @@ ul {
 ====================*/
 .note {
 
-
-
-
 }
 .userInfo {
   display: flex;
@@ -771,6 +857,9 @@ ul {
   &_name {
 
   }
+  @include mqSP() {
+    margin-bottom: $space-xxs;
+  };
 
 }
 
