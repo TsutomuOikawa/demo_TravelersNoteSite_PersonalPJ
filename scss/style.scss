@@ -5,7 +5,7 @@ $siteColor: #2f393a;
 $siteColor-base: #d9d9d9;
 $siteColor-sub: #304848;
 $siteColor-note: #fcfaf2;
-$siteColor-accent: #de6710;
+$siteColor-accent: #ae9600;
 $siteColor-accent-hover: #ff9f58;
 $siteColor-err: #ff6565;
 
@@ -78,7 +78,7 @@ $breakpoint: (
   @include mqSP () {
     font-size: $fontSize-l;
     padding-bottom: $space-s;
-  };
+  }
 }
 
 /*====================
@@ -169,7 +169,7 @@ ul {
       border-bottom: 2px solid white;
     }
     &:first-child {
-      border-right: 1px solid rgba($color-black, .8);
+      border-right: 1px solid rgba($color-white, .8);
     }
   }
   &_submit {
@@ -572,7 +572,8 @@ ul {
   &::after {
     content: '';
     background-attachment: fixed;
-    background-blend-mode: darken;
+    background-blend-mode: lighten;
+    background-color: rgba(255, 255, 255, .1);
     background-image: url('../img/IMG_5228.JPG');
     background-position: center;
     background-size: cover;
@@ -587,6 +588,112 @@ ul {
 }
 
 /*====================
+ mypage
+====================*/
+.mypage {
+  display: flex;
+  &::before {
+    content: '';
+    background-image: url('../img/ノート.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: rgba(255, 255, 255, .1);
+    background-blend-mode: lighten;
+    height: 60%;
+    position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+    z-index: -100;
+  }
+
+  &_main {
+    width: 75%;
+  }
+  &_nav {
+    display: flex;
+    font-size: $fontSize-l;
+    padding-bottom: $space-s;
+    span {
+      background: $color-white;
+      margin: 0 $space-xs;
+      width: 1px;
+    }
+  }
+  &_article {
+    display: flex;
+    overflow-x: scroll;
+    section {
+      min-width: 100%;
+    }
+  }
+  &_title {
+    @extend %subTitle;
+
+  }
+  &_body {
+    min-width: 100%;
+  }
+  &_sidebar {
+    height: auto;
+    margin-left: 3%;
+    width: 22%;
+  }
+  &_profile {
+    background: rgba($siteColor-base, .7);
+    border-radius: 4px;
+    color: $fontColor-default;
+    margin-bottom: $space-xs;
+    padding: $space-xs;
+    .userInfo {
+      align-items: flex-start;
+      flex-direction: column;
+      font-weight: bold;
+      &_img {
+        height: 100px;
+        padding-bottom: $space-xs;
+        width: 100px;
+      }
+    }
+  }
+}
+
+@include mqSP() {
+  .mypage {
+    &_main {
+      width: 100%;
+    }
+    &_nav {
+      font-size: $fontSize-s;
+    }
+    &_sidebar {
+      margin-left: 0;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 100%;
+    }
+    &_profile {
+      border-radius: 0px;
+      .userInfo {
+        align-items: center;
+        flex-direction: row;
+        font-weight: bold;
+        &_img {
+          height: 35px;
+          padding-bottom: 0;
+          width: 35px;
+        }
+      }
+    }
+    &_menu {
+      display: none;
+    }
+  }
+}
+
+/*====================
  list
 ====================*/
 .list {
@@ -597,9 +704,7 @@ ul {
   &--note {
     @extend .list;
   }
-
   &--wish {
-
   }
   &--destination {
     @extend .list;
@@ -611,7 +716,6 @@ ul {
     @extend %subTitle;
     &--destination {
       @extend .list_title;
-      text-shadow: 0 0 5px $siteColor;
       text-align: center;
     }
   }
@@ -622,7 +726,7 @@ ul {
       background: rgba($siteColor-base, .2);
       box-sizing: border-box;
       height: 300px;
-      overflow-y: scroll;
+      overflow-y: auto;
       padding: $space-s;
       width: 100%;
     }
@@ -635,7 +739,7 @@ ul {
         flex-wrap: nowrap;
         justify-content: flex-start;
       margin: 0 -10px $space-l 0;
-      overflow-x: scroll;
+      overflow-x: auto;
     }
   }
 }
@@ -647,7 +751,7 @@ ul {
     &_body {
       &--note {
           flex-wrap: nowrap;
-        overflow-x: scroll;
+        overflow-x: auto;
       }
     }
   }
@@ -769,9 +873,8 @@ ul {
 
 @include mqSP() {
   .panel {
-    padding: 0 0 $space-l;
     &--note {
-      height: 270px;
+      height: 300px;
       min-width: 180px;
     }
     &_title {
