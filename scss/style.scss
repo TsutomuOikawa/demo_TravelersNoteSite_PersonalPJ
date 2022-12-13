@@ -717,8 +717,22 @@ ul {
 }
 
 .iconBox {
+  color: $fontColor-sub;
   display: flex;
-  align-items: center;
+    align-items: center;
+  padding-top: $space-xs;
+  &_num {
+    padding: 0 $space-xs 0 $space-xxs;
+  }
+}
+
+.icon {
+  cursor: pointer;
+  &--bookmark {
+    &.active {
+      color: #487878;
+    }
+  }
 }
 
 /*====================
@@ -982,10 +996,10 @@ ul {
   &_title {
     @extend %subTitle;
     font-size: $fontSize-m;
-    height: 55px;
+    max-height: 55px;
+    margin-bottom: $space-xxs;
     overflow: hidden;
     padding-bottom: 0;
-    margin-bottom: $space-xxs;
     text-align: left;
   }
   &_postDay{
@@ -1041,7 +1055,7 @@ ul {
     border-radius: 4px;
     cursor: pointer;
     display: inline-flex;
-    height: 150px;
+    height: 120px;
     margin: 0 $space-xs $space-xs 0;
     min-width: 20%;
   }
@@ -1077,7 +1091,7 @@ ul {
     }
     &_title {
       font-size: $fontSize-s;
-      height: 45px;
+      max-height: 45px;
     }
     &--wish {
       align-items: flex-start;

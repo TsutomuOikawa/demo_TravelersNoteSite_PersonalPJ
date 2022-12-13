@@ -43,10 +43,10 @@ require('header.php');
               </div>
               <p class="panel_postDay">2002/08/06投稿</p>
               <div class="iconBox">
-                <i></i>
-                <span></span>
-                <i></i>
-                <span></span>
+                <i class="fa-regular fa-bookmark fa-lg icon--bookmark"></i>
+                <span class="iconBox_num">33</span>
+                <i class="fa-regular fa-comment-dots fa-lg icon--comment"></i>
+                <span class="iconBox_num">2</span>
               </div>
             </div>
           </li>
@@ -61,10 +61,10 @@ require('header.php');
               </div>
               <p class="panel_postDay">2002/08/06投稿</p>
               <div class="iconBox">
-                <i></i>
-                <span></span>
-                <i></i>
-                <span></span>
+                <i class="fa-regular fa-bookmark fa-lg icon--bookmark"></i>
+                <span class="iconBox_num">33</span>
+                <i class="fa-regular fa-comment-dots fa-lg icon--comment"></i>
+                <span class="iconBox_num">2</span>
               </div>
             </div>
           </li>
@@ -79,10 +79,10 @@ require('header.php');
               </div>
               <p class="panel_postDay">2002/08/06投稿</p>
               <div class="iconBox">
-                <i></i>
-                <span></span>
-                <i></i>
-                <span></span>
+                <i class="fa-regular fa-bookmark fa-lg icon--bookmark"></i>
+                <span class="iconBox_num">33</span>
+                <i class="fa-regular fa-comment-dots fa-lg icon--comment"></i>
+                <span class="iconBox_num">2</span>
               </div>
             </div>
           </li>
@@ -97,10 +97,10 @@ require('header.php');
               </div>
               <p class="panel_postDay">2002/08/06投稿</p>
               <div class="iconBox">
-                <i></i>
-                <span></span>
-                <i></i>
-                <span></span>
+                <i class="fa-solid fa-bookmark fa-lg icon icon--bookmark active"></i>
+                <span class="iconBox_num">33</span>
+                <i class="fa-regular fa-comment-dots fa-lg icon"></i>
+                <span class="iconBox_num">2</span>
               </div>
             </div>
           </li>
@@ -121,10 +121,10 @@ require('header.php');
               </div>
               <p class="panel_postDay">2002/08/06投稿</p>
               <div class="iconBox">
-                <i></i>
-                <span></span>
-                <i></i>
-                <span></span>
+                <i class="fa-regular fa-bookmark fa-lg icon--bookmark"></i>
+                <span class="iconBox_num">33</span>
+                <i class="fa-regular fa-comment-dots fa-lg icon--comment"></i>
+                <span class="iconBox_num">2</span>
               </div>
             </div>
             <div class="note_outline">
