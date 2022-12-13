@@ -671,11 +671,9 @@ ul {
   display: flex;
     align-items: center;
   margin-bottom: $space-xxs;
-  &--mypage {
-    display: flex;
+  &--big {
     align-items: flex-start;
     flex-direction: column;
-    font-weight: bold;
   }
   &_img {
     border-radius: 100%;
@@ -683,38 +681,33 @@ ul {
     margin-right: $space-xs;
     width: 35px;
     &--big {
-      border-radius: 100%;
       height: 100px;
-      margin-right: $space-xs;
+      padding-bottom: $space-xxs;
       width: 100px;
     }
   }
   &_name {
     font-size: $fontSize-s;
+    &--big {
+      font-size: $fontSize-m;
+      font-weight: bold;
+    }
   }
 }
 
 @include mqSP() {
   .userInfo {
     margin-bottom: $space-xxs;
-    &--mypage {
+    &--big {
       align-items: center;
       flex-direction: row;
-    }
-    &--big {
-      font-weight: bold;
-        align-items: center;
-        flex-direction: row;
+      margin-bottom: 0;
     }
     &_img {
       &--big {
         height: 35px;
-        margin-bottom: 0;
+        padding-bottom: 0;
         width: 35px;
-      }
-      &--bg {
-        height: 50px;
-        width: 50px;
       }
     }
     &_name {

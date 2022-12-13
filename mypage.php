@@ -11,11 +11,11 @@ require ('header.php');
           <div class="mypage_main">
             <nav class="mypage_nav">
               <p>Map</p>
-              <span></span>
+              <span class="itemSeparater"></span>
               <p>Notes</p>
-              <span></span>
+              <span class="itemSeparater"></span>
               <p>WishLists</p>
-              <span></span>
+              <span class="itemSeparater"></span>
               <p>Favorites</p>
             </nav>
             <div class="mypage_article">
@@ -327,9 +327,9 @@ require ('header.php');
           </div>
           <div class="mypage_sidebar">
             <div class="mypage_profile">
-              <div class="userInfo">
-                <img src="img/プロフィールアイコン：有色.jpeg" class="userInfo_img" alt="">
-                <p class="userInfo_name">ユーザーネーム</p>
+              <div class="userInfo userInfo--big">
+                <img src="img/プロフィールアイコン：有色.jpeg" class="userInfo_img userInfo_img--big" alt="">
+                <p class="userInfo_name userInfo_name--big">ユーザーネーム</p>
               </div>
 
             </div>
