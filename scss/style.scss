@@ -9,6 +9,7 @@ $siteColor-accent: #ae9600;
 $siteColor-accent-hover: #ff9f58;
 $siteColor-err: #ff6565;
 
+$fontSize-sss: 10px;
 $fontSize-ss: 13px;
 $fontSize-s: 15px;
 $fontSize-default: 16px;
@@ -329,6 +330,8 @@ ul {
   }
   &--note {
     @extend .container;
+    background-blend-mode: darken;
+    background-color: rgba($color-black, .4);
     background-image: url('../img/woody-background.JPG');
     background-position: left;
     background-repeat: repeat;
@@ -588,37 +591,255 @@ ul {
 }
 
 /*====================
+ note
+====================*/
+.note {
+  background: rgba($siteColor-base, .8);
+  border-radius: 4px;
+
+  &_thumbnail {
+    border-radius: 4px 4px 0 0;
+    height: 250px;
+    position: relative;
+    &::before {
+      content: '';
+      background-image: url('../img/IMG_5131.JPG');
+      background-position: center;
+      background-size: cover;
+      border-radius: 4px 4px 0 0;
+      position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+  }
+  &_description {
+    color: $fontColor-default;
+    display: flex;
+    padding: $space-s;
+  }
+  &_outline {
+    border-left: 1px solid $fontColor-default;
+    box-sizing: border-box;
+    display: flex;
+      flex-direction: column;
+    max-width: 50%;
+    min-width: 50%;
+    padding: $space-xs;
+  }
+  &_chapter {
+    display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+    padding-bottom: $space-xxs;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+  &_beginning {
+    font-size: $fontSize-s;
+    height: 20px;
+    overflow: hidden;
+  }
+}
+
+@include mqSP() {
+  .note {
+    &_thumbnail {
+      height: 150px;
+    }
+    &_description {
+      padding: $space-xxs;
+    }
+    &_outline {
+      padding: $space-xs;
+    }
+    &_chapter {
+      font-size: $fontSize-s;
+      padding-bottom: $space-xxs;
+    }
+    &_beginning {
+      font-size: $fontSize-sss;
+      height: 40px;
+    }
+  }
+}
+
+
+.userInfo {
+  display: flex;
+    align-items: center;
+  margin-bottom: $space-xxs;
+  &--mypage {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    font-weight: bold;
+  }
+  &_img {
+    border-radius: 100%;
+    height: 35px;
+    margin-right: $space-xs;
+    width: 35px;
+    &--big {
+      border-radius: 100%;
+      height: 100px;
+      margin-right: $space-xs;
+      width: 100px;
+    }
+  }
+  &_name {
+    font-size: $fontSize-s;
+  }
+}
+
+@include mqSP() {
+  .userInfo {
+    margin-bottom: $space-xxs;
+    &--mypage {
+      align-items: center;
+      flex-direction: row;
+    }
+    &--big {
+      font-weight: bold;
+        align-items: center;
+        flex-direction: row;
+    }
+    &_img {
+      &--big {
+        height: 35px;
+        margin-bottom: 0;
+        width: 35px;
+      }
+      &--bg {
+        height: 50px;
+        width: 50px;
+      }
+    }
+    &_name {
+      font-size: $fontSize-ss;
+    }
+  }
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+}
+
+/*====================
+ noteList
+====================*/
+.searchMenu {
+  line-height: 1;
+  &_item {
+    display: flex;
+      align-items: center;
+      justify-content: space-between;
+    padding-bottom: $space-s;
+  }
+  &_sort {
+    display: flex;
+    p {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &_appearNum {
+    padding: $space-xxs;
+  }
+}
+@include mqSP() {
+  .searchMenu {
+    &_item {
+      &:last-child {
+        align-items: flex-start;
+        flex-direction: column-reverse;
+      }
+    }
+    &_appearNum {
+      margin-bottom: $space-s;
+    }
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  text-align: left;
+  &_inner {
+    width: 980px;
+    position: absolute;
+      top: 120px;
+      left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+  }
+  &_note {
+    @extend .note;
+    margin-bottom: $space-m;
+  }
+  &_action {
+    cursor: pointer;
+    font-size: $fontSize-l;
+    margin-top: $space-xs;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &_cover {
+    background: rgba($color-black, .9);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+@include mqSP() {
+  .modal {
+    display: none;
+    &_inner {
+      width: 90%;
+        top: 100px;
+    }
+    &_note {
+      margin-bottom: $space-xs;
+    }
+    &_action {
+      font-size: $fontSize-s;
+    }
+  }
+}
+
+/*====================
  mypage
 ====================*/
 .mypage {
   display: flex;
-  &::before {
-    content: '';
-    background-image: url('../img/ノート.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-color: rgba(255, 255, 255, .1);
-    background-blend-mode: lighten;
-    height: 60%;
-    position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-    z-index: -100;
-  }
-
   &_main {
-    width: 75%;
+    background: rgba($siteColor-base, .7);
+    border-radius: 4px;
+    color: $fontColor-default;
+    margin-bottom: $space_l;
+    padding: $space-xs $space-xxs;
+    width: 78%;
   }
   &_nav {
     display: flex;
-    font-size: $fontSize-l;
-    padding-bottom: $space-s;
+    font-size: $fontSize-m;
+    padding: 0 0 $space-m $space-xs;
     span {
-      background: $color-white;
-      margin: 0 $space-xs;
-      width: 1px;
+      background: $fontColor-default;
     }
   }
   &_article {
@@ -637,8 +858,8 @@ ul {
   }
   &_sidebar {
     height: auto;
-    margin-left: 3%;
-    width: 22%;
+    margin-left: 1%;
+    width: 23%;
   }
   &_profile {
     background: rgba($siteColor-base, .7);
@@ -646,16 +867,6 @@ ul {
     color: $fontColor-default;
     margin-bottom: $space-xs;
     padding: $space-xs;
-    .userInfo {
-      align-items: flex-start;
-      flex-direction: column;
-      font-weight: bold;
-      &_img {
-        height: 100px;
-        padding-bottom: $space-xs;
-        width: 100px;
-      }
-    }
   }
 }
 
@@ -676,16 +887,7 @@ ul {
     }
     &_profile {
       border-radius: 0px;
-      .userInfo {
-        align-items: center;
-        flex-direction: row;
-        font-weight: bold;
-        &_img {
-          height: 35px;
-          padding-bottom: 0;
-          width: 35px;
-        }
-      }
+      padding: $space-xxs $space-xs;
     }
     &_menu {
       display: none;
@@ -698,11 +900,10 @@ ul {
 ====================*/
 .list {
   @extend %contents-wrapper;
-  box-shadow: none;
-  box-sizing: border-box;
   padding-top: $space-m;
   &--note {
     @extend .list;
+    padding: $space-s 0;
   }
   &--wish {
   }
@@ -732,6 +933,8 @@ ul {
     }
     &--note {
       @extend .list_body;
+      justify-content: space-around;
+      margin-left: -10px;
     }
     &--destination {
       @extend .list_body;
@@ -768,7 +971,7 @@ ul {
     @extend .panel;
     background: rgba(252, 250, 242, .8);
     height: 330px;
-    margin-right: $space-s;
+    margin: 0 0 $space-s $space-xxs;
     width: 220px;
   }
   &_thumbnail {
@@ -778,7 +981,6 @@ ul {
   }
   &_info {
     box-sizing: border-box;
-    font-size: $fontSize-ss;
     height: auto;
     padding: $space-xs;
     text-align: left;
@@ -787,7 +989,10 @@ ul {
   &_title {
     @extend %subTitle;
     font-size: $fontSize-m;
-    padding-bottom: $space-xxs;
+    height: 55px;
+    overflow: hidden;
+    padding-bottom: 0;
+    margin-bottom: $space-xxs;
     text-align: left;
   }
   &_postDay{
@@ -879,6 +1084,7 @@ ul {
     }
     &_title {
       font-size: $fontSize-s;
+      height: 45px;
     }
     &--wish {
       align-items: flex-start;
@@ -988,35 +1194,6 @@ ul {
 
 
 /*====================
- note関連
-====================*/
-.note {
-}
-.userInfo {
-  display: flex;
-    align-items: center;
-  &_img {
-    border-radius: 100%;
-    height: 35px;
-    margin-right: $space-xs;
-    width: 35px;
-  }
-  &_name {
-  }
-}
-
-@include mqSP() {
-  .userInfo {
-    margin-bottom: $space-xxs;
-  }
-}
-
-.iconBox {
-  display: flex;
-  align-items: center;
-}
-
-/*====================
   ピンポイントアイテム
 ====================*/
 .smallfont {
@@ -1029,4 +1206,10 @@ ul {
   &:hover {
     text-decoration: underline;
   }
+}
+
+.itemSeparater {
+  background: $color-white;
+  margin: 0 $space-xs;
+  width: 1px;
 }
