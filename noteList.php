@@ -116,8 +116,8 @@ require('header.php');
             <div class="panel_info">
               <h3 class="panel_title">朝5時に家を出てから、18時間での熊本訪問</h3>
               <div class="userInfo">
-                <img src="img/プロフィールアイコン：有色.jpeg" class="userInfo_img" alt="">
-                <p class="userInfo_name">ユーザーネーム</p>
+                <img src="img/プロフィールアイコン：有色.jpeg" class="userInfo_img userInfo_img--big" alt="">
+                <p class="userInfo_name userInfo_name--big">ユーザーネーム</p>
               </div>
               <p class="panel_postDay">2002/08/06投稿</p>
               <div class="iconBox">
