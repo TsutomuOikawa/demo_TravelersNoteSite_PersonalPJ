@@ -78,7 +78,7 @@ require ('header.php');
       </section>
       <section id="search" class="container--baseColor">
         <h2 class="container_title">旅先を探す</h2>
-        <div class="container_body--l">
+        <div class="container_body">
           <h3 class="list_title">人気のノートから探す</h3>
           <div class="list--note">
             <ul class="list_body--note">

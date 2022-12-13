@@ -169,7 +169,7 @@ require ('header.php');
       </div>
       <section id="note" class="container--note">
         <h2 class="container_title">熊本県の最新ノート</h2>
-        <div class="container_body--l">
+        <div class="container_body">
           <div class="list--note">
             <ul class="list_body--note">
               <li class="panel--note">
@@ -248,7 +248,7 @@ require ('header.php');
           </div>
         </div>
       </section>
-      <section id="changeDestination" class="container">
+      <section id="changeDestination" class="container changeDestination">
         <h2 class="container_title">行き先を変える</h2>
         <div class="container_body--l">
           <div class="list--destination">
@@ -317,8 +317,6 @@ require ('header.php');
                 <span class="panel_destName">千葉</span>
               </a>
             </div>
-
-
 
           </div>
         </div>
