@@ -598,44 +598,14 @@ ul {
  note
 ====================*/
 .note {
-  &_outline {
-    border-left: 1px solid $fontColor-default;
-    box-sizing: border-box;
-    display: flex;
-      flex-direction: column;
-    max-width: 50%;
-    min-width: 50%;
-    padding: $space-xs;
-  }
-  &_chapter {
-    display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-    padding-bottom: $space-xxs;
-    &:last-child {
-      padding-bottom: 0;
-    }
-  }
-  &_beginning {
-    font-size: $fontSize-s;
-    height: 20px;
-    overflow: hidden;
-  }
-}
-
-
-/*====================
- readNote
-====================*/
-.readNote {
-  margin-left: 18%;
-  width: 60%;
-  &_post {
-    @extend %contents-wrapper;
-    background: rgba($siteColor-base, .7);
-    color: $fontColor-default;
-    margin-bottom: $space-m;
-    width: 100%;
+  @extend %contents-wrapper;
+  background: rgba($siteColor-base, .8);
+  color: $fontColor-default;
+  margin-bottom: $space-m;
+  width: 100%;
+  &-wrapper {
+    margin-left: 18%;
+    width: 60%;
   }
   &_thumbnail {
     border-radius: 4px 4px 0 0;
@@ -644,42 +614,64 @@ ul {
     margin: -30px -15px $space-s;
     width: calc(100% + 30px);
   }
-  &_smallInfo {
+  &_subInfo {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-}
-
-@include mqSP() {
-  .readNote {
-    margin-left: 0;
-    width: 100%;
-    &_thumbnail {
-      display: block;
-    }
-
+  &_text {
+    margin-top: $space-m;
+    padding: $space-xxs;
   }
 }
-
 
 @include mqSP() {
   .note {
-    &_outline {
-      padding: $space-xs;
+    &-wrapper {
+      margin-left: 0;
+      width: 100%;
     }
-    &_chapter {
-      font-size: $fontSize-s;
-      padding-bottom: $space-xxs;
-    }
-    &_beginning {
-      font-size: $fontSize-sss;
-      height: 40px;
+    &_thumbnail {
+      display: block;
     }
   }
 }
 
+.comments {
+  @extend %contents-wrapper;
+  background: rgba($siteColor-base, .8);
+  color: $fontColor-default;
+  &_list {
+    margin-bottom: $space-m;
+  }
+  &_item {
+    border-bottom: 1px solid $siteColor;
+    padding: $space-xxs;
+  }
+  &_text {
+    font-size: $fontSize-s;
+  }
+  &_posting {
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: $space-xs;
+    width: 100%;
+  }
+}
 
+@include mqSP() {
+  .comments {
+    &_list {
+    }
+    &_item {
+    }
+    &_text {
+      font-size: $fontSize-ss;
+    }
+    &_posting {
+    }
+  }
+}
 
 .userInfo {
   display: flex;
@@ -830,6 +822,29 @@ ul {
     display: flex;
     padding: $space-s;
   }
+  &_outline {
+    border-left: 1px solid $fontColor-default;
+    box-sizing: border-box;
+    display: flex;
+      flex-direction: column;
+    max-width: 50%;
+    min-width: 50%;
+    padding: $space-xs;
+  }
+  &_chapter {
+    display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+    padding-bottom: $space-xxs;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+  &_beginning {
+    font-size: $fontSize-s;
+    height: 20px;
+    overflow: hidden;
+  }
   &_action {
     cursor: pointer;
     font-size: $fontSize-l;
@@ -865,6 +880,17 @@ ul {
     }
     &_body {
       padding: $space-xxs;
+    }
+    &_outline {
+      padding: $space-xs;
+    }
+    &_chapter {
+      font-size: $fontSize-s;
+      padding-bottom: $space-xxs;
+    }
+    &_beginning {
+      font-size: $fontSize-sss;
+      height: 40px;
     }
     &_action {
       font-size: $fontSize-s;
