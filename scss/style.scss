@@ -102,7 +102,7 @@ img {
   width: 100%;
   vertical-align: bottom;
 }
-input {
+input, textarea, select {
   padding: $space-xxs $space-xs;
   border: none;
   box-sizing: border-box;
@@ -1269,6 +1269,10 @@ ul {
       border: 2px solid $siteColor-sub;
     }
   }
+  &_date {
+    display: flex;
+      align-items: flex-end;
+  }
   &_button {
     width: 45%;
     padding: $space-xs 0;
@@ -1301,6 +1305,14 @@ ul {
   }
 }
 
+@include mqSP() {
+  .form {
+    &_date {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+}
 
 /*====================
   ピンポイントアイテム
