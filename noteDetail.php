@@ -40,6 +40,52 @@ require ('header.php');
             </section>
 
           </article>
+
+          <div class="followingBtn">
+            <i class="fa-solid fa-up-right-from-square"></i>
+            <p>イキタイ！</p>
+          </div>
+
+          <div class="modal">
+            <div class="modal-wrapper">
+              <form class="modal_form form" action="" method="post">
+                <p>イキタイ登録</p>
+                <label>
+                  <div class="form_name">
+                    <span class="form_label form_label--required">必須</span>
+                    都道府県
+                  </div>
+                  <select class="form_input" name="prefecture_id">
+                    <option value="">熊本県</option>
+                  </select>
+                </label>
+                <p class="form_errMsg"></p>
+
+                <label>
+                  <div class="form_name">
+                    <span class="form_label form_label--required">必須</span>
+                    どこで
+                  </div>
+                  <input type="text" name="where" class="form_input" value="">
+                </label>
+                <p class="form_errMsg"></p>
+
+                <label>
+                  <div class="form_name">
+                    <span class="form_label form_label--optional">任意</span>
+                    何をしたい？
+                  </div>
+                  <input type="text" name="what" class="form_input" value="">
+                </label>
+                <p class="form_errMsg"></p>
+                <button type="submit" class="form_button" name="button">登録する</button>
+
+              </form>
+              <span class="modal_action">&lt 戻る</span>
+            </div>
+            <div class="modal_cover"></div>
+          </div>
+
           <aside class="sidebar">
             <img src="img/IMG_5131.JPG" class="sidebar_thumbnail" alt="">
             <div class="sidebar_contents">
