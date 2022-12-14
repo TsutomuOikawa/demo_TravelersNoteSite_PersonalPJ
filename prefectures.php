@@ -250,7 +250,7 @@ require ('header.php');
       </section>
       <section id="changeDestination" class="container changeDestination">
         <h2 class="container_title">行き先を変える</h2>
-        <div class="container_body--l">
+        <div class="container_body">
           <div class="list--destination">
 
             <h3 class="list_title--destination">北海道・東北</h3>
@@ -321,6 +321,53 @@ require ('header.php');
           </div>
         </div>
       </section>
+
+      <div class="followingBtn">
+        <i class="fa-solid fa-up-right-from-square"></i>
+        <p>イキタイ！</p>
+      </div>
+
+      <div class="modal">
+        <div class="modal-wrapper">
+          <form class="modal_form form" action="" method="post">
+            <p>イキタイ登録</p>
+            <label>
+              <div class="form_name">
+                <span class="form_label form_label--required">必須</span>
+                都道府県
+              </div>
+              <select class="form_input" name="prefecture_id">
+                <option value="">熊本県</option>
+              </select>
+            </label>
+            <p class="form_errMsg"></p>
+
+            <label>
+              <div class="form_name">
+                <span class="form_label form_label--required">必須</span>
+                どこで
+              </div>
+              <input type="text" name="where" class="form_input" value="">
+            </label>
+            <p class="form_errMsg"></p>
+
+            <label>
+              <div class="form_name">
+                <span class="form_label form_label--optional">任意</span>
+                何をしたい？
+              </div>
+              <input type="text" name="what" class="form_input" value="">
+            </label>
+            <p class="form_errMsg"></p>
+            <button type="submit" class="form_button" name="button">登録する</button>
+
+          </form>
+          <span class="modal_action">&lt 戻る</span>
+        </div>
+        <div class="modal_cover"></div>
+      </div>
+
     </main>
+
 
 <?php require('footer.php'); ?>

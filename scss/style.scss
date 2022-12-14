@@ -849,7 +849,17 @@ ul {
     height: 20px;
     overflow: hidden;
   }
+  &_form {
+    width: 50%;
+    margin-bottom: $space-m;
+    p {
+      font-size: $fontSize-l;
+      font-weight: bold;
+      margin-bottom: $space-s;
+    }
+  }
   &_action {
+    color: $color-white;
     cursor: pointer;
     font-size: $fontSize-l;
     margin-top: $space-xs;
@@ -895,6 +905,10 @@ ul {
     &_beginning {
       font-size: $fontSize-sss;
       height: 40px;
+    }
+    &_form {
+      width: 100%;
+      margin-bottom: $space-xs;
     }
     &_action {
       font-size: $fontSize-s;
@@ -1311,6 +1325,40 @@ ul {
       align-items: flex-start;
       flex-direction: column;
     }
+  }
+}
+
+/*====================
+  ウィッシュリスト
+====================*/
+.followingBtn {
+  background: #487878;
+  border-radius: 40px;
+  box-shadow: 0 8px $color-black;
+  box-sizing: border-box;
+  color: $color-white;
+  cursor: pointer;
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+  font-size: $fontSize-s;
+  font-weight: bold;
+  height: 50px;
+  padding: $space-xs;
+  position: fixed;
+    right: 50px;
+    bottom: 50px;
+  width: 120px;
+}
+
+@include mqSP() {
+  .followingBtn {
+    box-shadow: 0 5px $color-black;
+    font-size: $fontSize-ss;
+    height: 40px;
+    padding: $space-xxs;
+      right: 10px;
+    width: 95px;
   }
 }
 
