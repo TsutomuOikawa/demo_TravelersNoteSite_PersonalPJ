@@ -109,10 +109,10 @@ require('header.php');
       </div>
     </div>
     <div class="modal">
-      <div class="modal_inner">
+      <div class="modal-wrapper">
         <div class="modal_note">
-          <div class="note_thumbnail"></div>
-          <div class="note_description">
+          <div class="modal_thumbnail"></div>
+          <div class="modal_body">
             <div class="panel_info">
               <h3 class="panel_title">朝5時に家を出てから、18時間での熊本訪問</h3>
               <div class="userInfo">
@@ -149,9 +149,7 @@ require('header.php');
         </div>
         <span class="modal_action">&lt 戻る</span>
       </div>
-      <div class="modal_cover">
-
-      </div>
+      <div class="modal_cover"></div>
     </div>
 
   </div>

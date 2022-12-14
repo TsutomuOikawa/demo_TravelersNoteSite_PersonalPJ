@@ -375,6 +375,10 @@ ul {
       @extend .container_body;
       max-width: 1220px;
     }
+    &--2col {
+      display: flex;
+        justify-content: space-between;
+    }
   }
 }
 
@@ -594,31 +598,6 @@ ul {
  note
 ====================*/
 .note {
-  background: rgba($siteColor-base, .8);
-  border-radius: 4px;
-
-  &_thumbnail {
-    border-radius: 4px 4px 0 0;
-    height: 250px;
-    position: relative;
-    &::before {
-      content: '';
-      background-image: url('../img/IMG_5131.JPG');
-      background-position: center;
-      background-size: cover;
-      border-radius: 4px 4px 0 0;
-      position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
-  }
-  &_description {
-    color: $fontColor-default;
-    display: flex;
-    padding: $space-s;
-  }
   &_outline {
     border-left: 1px solid $fontColor-default;
     box-sizing: border-box;
@@ -644,14 +623,48 @@ ul {
   }
 }
 
+
+/*====================
+ readNote
+====================*/
+.readNote {
+  margin-left: 18%;
+  width: 60%;
+  &_post {
+    @extend %contents-wrapper;
+    background: rgba($siteColor-base, .7);
+    color: $fontColor-default;
+    margin-bottom: $space-m;
+    width: 100%;
+  }
+  &_thumbnail {
+    border-radius: 4px 4px 0 0;
+    display: none;
+    height: 200px;
+    margin: -30px -15px $space-s;
+    width: calc(100% + 30px);
+  }
+  &_smallInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@include mqSP() {
+  .readNote {
+    margin-left: 0;
+    width: 100%;
+    &_thumbnail {
+      display: block;
+    }
+
+  }
+}
+
+
 @include mqSP() {
   .note {
-    &_thumbnail {
-      height: 150px;
-    }
-    &_description {
-      padding: $space-xxs;
-    }
     &_outline {
       padding: $space-xs;
     }
@@ -665,6 +678,7 @@ ul {
     }
   }
 }
+
 
 
 .userInfo {
@@ -689,7 +703,7 @@ ul {
   &_name {
     font-size: $fontSize-s;
     &--big {
-      font-size: $fontSize-m;
+      font-size: $fontSize-default;
       font-weight: bold;
     }
   }
@@ -781,7 +795,7 @@ ul {
     bottom: 0;
     left: 0;
   text-align: left;
-  &_inner {
+  &-wrapper {
     width: 980px;
     position: absolute;
       top: 120px;
@@ -790,8 +804,31 @@ ul {
     z-index: 100;
   }
   &_note {
-    @extend .note;
+    background: rgba($siteColor-base, .8);
+    border-radius: 4px;
     margin-bottom: $space-m;
+  }
+  &_thumbnail {
+     border-radius: 4px 4px 0 0;
+     height: 250px;
+     position: relative;
+     &::before {
+       content: '';
+       background-image: url('../img/IMG_5131.JPG');
+       background-position: center;
+       background-size: cover;
+       border-radius: 4px 4px 0 0;
+       position: absolute;
+         top: 0;
+         right: 0;
+         bottom: 0;
+         left: 0;
+    }
+  }
+  &_body {
+    color: $fontColor-default;
+    display: flex;
+    padding: $space-s;
   }
   &_action {
     cursor: pointer;
@@ -812,15 +849,22 @@ ul {
     width: 100%;
   }
 }
+
 @include mqSP() {
   .modal {
     display: none;
-    &_inner {
+    &-wrapper {
       width: 90%;
         top: 100px;
     }
     &_note {
       margin-bottom: $space-xs;
+    }
+    &_thumbnail {
+      height: 150px;
+    }
+    &_body {
+      padding: $space-xxs;
     }
     &_action {
       font-size: $fontSize-s;
@@ -832,15 +876,12 @@ ul {
  mypage
 ====================*/
 .mypage {
-  display: flex;
-  &_main {
-    background: rgba($siteColor-base, .7);
-    border-radius: 4px;
-    color: $fontColor-default;
-    margin-bottom: $space_l;
-    padding: $space-xs $space-xxs;
-    width: 78%;
-  }
+  background: rgba($siteColor-base, .7);
+  border-radius: 4px;
+  color: $fontColor-default;
+  margin-bottom: $space_l;
+  padding: $space-xs $space-xxs;
+  width: 78%;
   &_nav {
     display: flex;
     font-size: $fontSize-m;
@@ -858,50 +899,76 @@ ul {
   }
   &_title {
     @extend %subTitle;
-
   }
   &_body {
     min-width: 100%;
   }
-  &_sidebar {
-    height: auto;
-    margin-left: 1%;
-    width: 23%;
-  }
-  &_profile {
-    background: rgba($siteColor-base, .7);
-    border-radius: 4px;
-    color: $fontColor-default;
-    margin-bottom: $space-xs;
-    padding: $space-xs;
-  }
+
 }
 
 @include mqSP() {
   .mypage {
-    &_main {
-      width: 100%;
-    }
+    width: 100%;
     &_nav {
       font-size: $fontSize-s;
-    }
-    &_sidebar {
-      margin-left: 0;
-      position: fixed;
-      top: 70px;
-      left: 0;
-      width: 100%;
-    }
-    &_profile {
-      border-radius: 0px;
-      padding: $space-xxs $space-xs;
-    }
-    &_menu {
-      display: none;
     }
   }
 }
 
+/*====================
+ sidebar
+====================*/
+.sidebar {
+  background: rgba($siteColor-base, .7);
+  border-radius: 4px;
+  height: 100%;
+  margin-left: 1%;
+  width: 23%;
+  &_thumbnail {
+    border-radius: 4px 4px 0 0;
+    height: 200px;
+  }
+  &_contents {
+    color: $fontColor-default;
+    padding: $space-xs;
+    text-align: left;
+  }
+  &_profile {
+    color: $fontColor-default;
+    margin-bottom: $space-xs;
+  }
+  &_chapters {
+    margin-bottom: $space-xs;
+    padding: $space-xxs ;
+  }
+}
+
+@include mqSP() {
+  .sidebar {
+    border-radius: 0;
+    height: auto;
+    margin-left: 0;
+    position: fixed;
+      top: 70px;
+      left: 0;
+    width: 100%;
+    &_thumbnail {
+      display: none;
+    }
+    &_contents {
+      padding: $space-xxs $space-xs;
+    }
+    &_profile {
+      margin-bottom: 0;
+    }
+    &_menu {
+      display: none;
+    }
+    &_chapters {
+      display: none;
+    }
+  }
+}
 /*====================
  list
 ====================*/
